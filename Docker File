@@ -1,0 +1,11 @@
+Docker File Best Practices and some interesting reference links 
+
+. Create ephimeral Conatiner 
+. Understand your build context and the best way to stdn in 
+. Exclude no relevant files to your build
+. Leverage build cache. If build contain several layer order them from less frecuently changed(ti ensure that build code is reusable) to more frecuently used:
+   - tools for build your apps
+   - install/update libs 
+   - generate app
+ . decouple app 1app - each container 
+ . use linter tools example like Docker File linter tool(https://hadolint.github.io/hadolint/)
