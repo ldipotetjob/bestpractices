@@ -9,3 +9,8 @@ Docker File Best Practices and some interesting reference links
    - generate app
  . decouple app 1app - each container 
  . use linter tools example like Docker File linter tool(https://hadolint.github.io/hadolint/)
+
+
+ref: 
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/
