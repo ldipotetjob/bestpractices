@@ -1,0 +1,17 @@
+
+Don't use nacked pods 
+Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it.
+An optional (though strongly recommended) cluster add-on is a DNS server
+Don't specify a hostPort for a Pod unless it is absolutely necessary
+Avoid using hostNetwork
+Use headless Services (which have a ClusterIP of None) for easy service discovery when you don't need kube-proxy load balancing.
+Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
+Have a look at the imagePullPolicy that fit better to your installation.
+Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
+
+
+[kubectl commands]  ref: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
+[kubectl cheatsheet] ref: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+[k8s guess book example - go] ref: https://github.com/kubernetes/examples/tree/master/guestbook-go
+ref: https://kubernetes.io/docs/concepts/configuration/overview/#container-images
+ref: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips
