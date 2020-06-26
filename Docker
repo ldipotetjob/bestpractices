@@ -1,5 +1,4 @@
 Docker File Best Practices and some interesting reference links 
-
 . Create ephimeral Conatiner 
 . Understand your build context and the best way to stdn in 
 . Exclude no relevant files to your build
