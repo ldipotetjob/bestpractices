@@ -8,6 +8,43 @@ Use headless Services (which have a ClusterIP of None) for easy service discover
 Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
 Have a look at the imagePullPolicy that fit better to your installation.
 Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
+Use label and selector whenever be possible. [ https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/ ] 
+Prepare you updating image policy [ https://kubernetes.io/docs/concepts/containers/images/#updating-images ]
+
+
+
+
+
+
+===== Templates =====
+
+Deployments => [ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment ]
+
+StateFullSet => [ https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#components ]
+
+Services => [ https://kubernetes.io/docs/concepts/services-networking/service/ ]
+
+
+==== Connecting app with Services ===
+
+[ https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/ ]
+
+==== Exposing services in the k8s cluster to external addresses ===
+
+[ https://kubernetes.io/docs/concepts/services-networking/ingress/ ]
+
+=== EBS Volume ====
+
+[ https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore ]
+
+=== Storage Class ===
+
+[ https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource ]
+
+=== PVC ===
+
+[ https://kubernetes.io/docs/concepts/storage/persistent-volumes/ ]
+
 
 
 [kubectl commands]  ref: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
