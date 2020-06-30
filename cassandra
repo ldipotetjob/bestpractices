@@ -1,0 +1,7 @@
+== AWS ===
+EBS drive 
+Ephimeral SSD 
+Have Strong backup and restore measures in place
+- Test backup & Test Restores
+Know how long it takes to boostrap/rebuild nodes and rebuild DCs
+Test failure scenarios 
