@@ -24,6 +24,12 @@ some companies still write apps that log to files. Redirecting logs to stdout an
 framework to come into play and automatically stream the logs to any desired location.
 
 
+== Operators ==
+
+An Operator extends Kubernetes to automate the management of the entire life cycle of a particular application. 
+Operators serve as a packaging mechanism for distributing applications on Kubernetes, and they monitor, maintain, 
+recover, and upgrade the software they deploy.
+
 ===== Templates =====
 
 Deployments => [ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment ]
