@@ -6,7 +6,7 @@ Don't specify a hostPort for a Pod unless it is absolutely necessary
 Avoid using hostNetwork
 Use headless Services (which have a ClusterIP of None) for easy service discovery when you don't need kube-proxy load balancing.
 Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
-Have a look at the imagePullPolicy that fit better to your installation.
+Have a look at the imagePullPolicy that fit better to your installation.[ https://kubernetes.io/docs/concepts/containers/images/ ]
 Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
 Use label and selector whenever be possible. [ https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/ ] 
 Prepare you updating image policy [ https://kubernetes.io/docs/concepts/containers/images/#updating-images ]
