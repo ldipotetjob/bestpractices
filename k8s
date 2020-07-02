@@ -22,6 +22,8 @@ stores logs for future use.
 Write Logs to Stdout and Stderr => explanation ... Although it’s standard practice when moving to a containerized environment, 
 some companies still write apps that log to files. Redirecting logs to stdout and stderr allows Kubernetes’ centralized logging 
 framework to come into play and automatically stream the logs to any desired location.
+[ https://kubernetes.io/docs/concepts/cluster-administration/logging/ ]
+
 
 
 == Operators ==
