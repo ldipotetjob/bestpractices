@@ -68,3 +68,5 @@ Services => [ https://kubernetes.io/docs/concepts/services-networking/service/ ]
 [k8s guess book example - go] ref: https://github.com/kubernetes/examples/tree/master/guestbook-go
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#container-images
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips
+[test environment - cluster-k8s-minikube]-https://minikube.sigs.k8s.io/docs/commands/start/
+
