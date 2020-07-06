@@ -80,4 +80,5 @@ ref: https://minikube.sigs.k8s.io/docs/commands/start/
 [k8s guess book example - go](https://github.com/kubernetes/examples/tree/master/guestbook-go)
 
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#container-images
+
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips
