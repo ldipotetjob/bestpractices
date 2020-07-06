@@ -1,6 +1,6 @@
-# Best Practices - k8s #
+# Best Practices - k8s 
 
-## Basic ##
+## Basic 
 
 * Don't use nacked pods 
 * Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it.
@@ -9,80 +9,41 @@
 * Avoid using hostNetwork
 * Use headless Services (which have a ClusterIP of None) for easy service discovery when you don't need kube-proxy load balancing.
 * Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
-* Have a look at the imagePullPolicy that fit better to your installation.[ https://kubernetes.io/docs/concepts/containers/images/ ]
-* Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
-* Use label and selector whenever be possible. [ https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/ ] 
+* Have a look at the imagePullPolicy that fit better to your installation. ref: https://kubernetes.io/docs/concepts/containers/images/
+* Create namespace. Decide when create + namespaces. ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces
+* Use label and selector whenever be possible. ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
 * Prepare you updating image policy. ref: https://kubernetes.io/docs/concepts/containers/images/#updating-images 
 
+## Loggin 
+
+* Set Up loggin System 
+* Establish a Retention Mechanism => explanation ... adptar a nuestros logs: Whether you choose to perform logging internally or use a third-party service, logs still eat up a lot of space. Therefore, make sure you have a clear retention policy that stores logs for future use.
+* Write Logs to Stdout and Stderr => explanation ... Although it’s standard practice when moving to a containerized environment, 
+some companies still write apps that log to files. Redirecting logs to stdout and stderr allows Kubernetes’ centralized logging framework to come into play and automatically stream the logs to any desired location. ref: https://kubernetes.io/docs/concepts/cluster-administration/logging/
 
 
-This project is related with best practices that can be applied in the process of software creation.
+## Security ## 
 
-## Best practices that can be found here ##
+* Implement Continuous Security Vulnerability Scanning
+* Regularly Apply Security Updates to Your Environment
+* Ensure That Only Authorized Images are Used in Your Environment
+* Limit Direct Access to Kubernetes Nodes
+* Create Administrative Boundaries between Resources
+* Define Resource Quota
+* Apply Security Context to Your Pods and Containers
+* Implement Network Segmentation
 
-* Coding scala.
-* working with Git
-* Working with Docker[ Docker Container/Docker Files ] 
-* K8s 
-* Cassandra DB
-* Dealing with config files 
-
-
-
-
-
-
-
-
-
-
-
-
-Don't use nacked pods 
-Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it.
-An optional (though strongly recommended) cluster add-on is a DNS server
-Don't specify a hostPort for a Pod unless it is absolutely necessary
-Avoid using hostNetwork
-Use headless Services (which have a ClusterIP of None) for easy service discovery when you don't need kube-proxy load balancing.
-Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
-Have a look at the imagePullPolicy that fit better to your installation.[ https://kubernetes.io/docs/concepts/containers/images/ ]
-Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
-Use label and selector whenever be possible. [ https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/ ] 
-Prepare you updating image policy [ https://kubernetes.io/docs/concepts/containers/images/#updating-images ]
-
-
-
-== Loggin ==
-
-Set Up loggin System 
-Establish a Retention Mechanism => explanation ... adptar a nuestros logs: Whether you choose to perform logging internally 
-or use a third-party service, logs still eat up a lot of space. Therefore, make sure you have a clear retention policy that 
-stores logs for future use.
-Write Logs to Stdout and Stderr => explanation ... Although it’s standard practice when moving to a containerized environment, 
-some companies still write apps that log to files. Redirecting logs to stdout and stderr allows Kubernetes’ centralized logging 
-framework to come into play and automatically stream the logs to any desired location.
-[ https://kubernetes.io/docs/concepts/cluster-administration/logging/ ]
-
-
-== Security ==
-
-Implement Continuous Security Vulnerability Scanning
-Regularly Apply Security Updates to Your Environment
-Ensure That Only Authorized Images are Used in Your Environment
-Limit Direct Access to Kubernetes Nodes
-Create Administrative Boundaries between Resources
-Define Resource Quota
-Apply Security Context to Your Pods and Containers
-Implement Network Segmentation
-
-[ https://kubernetes.io/blog/2016/08/security-best-practices-kubernetes-deployment/ ]
-== Operators ==
+## Operators 
 
 An Operator extends Kubernetes to automate the management of the entire life cycle of a particular application. 
 Operators serve as a packaging mechanism for distributing applications on Kubernetes, and they monitor, maintain, 
 recover, and upgrade the software they deploy.
 
-===== Templates =====
+## Appendices
+
+k8s best practices for deployements => https://kubernetes.io/blog/2016/08/security-best-practices-kubernetes-deployment/
+
+#### Templates
 
 Deployments => [ https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment ]
 
@@ -91,32 +52,32 @@ StateFullSet => [ https://kubernetes.io/docs/concepts/workloads/controllers/stat
 Services => [ https://kubernetes.io/docs/concepts/services-networking/service/ ]
 
 
-==== Connecting app with Services ===
+####  Connecting app with Services
 
-[ https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/ ]
+ref: https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/
 
-==== Exposing services in the k8s cluster to external addresses ===
+####  Exposing services in the k8s cluster to external addresses
 
-[ https://kubernetes.io/docs/concepts/services-networking/ingress/ ]
+ref: https://kubernetes.io/docs/concepts/services-networking/ingress/
 
-=== EBS Volume ====
+####  EBS Volume
 
-[ https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore ]
+ref: https://kubernetes.io/docs/concepts/storage/volumes/#awselasticblockstore
 
-=== Storage Class ===
+####  Storage Class
 
-[ https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource ]
+ref: https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource
 
-=== PVC ===
+#### PVC
 
-[ https://kubernetes.io/docs/concepts/storage/persistent-volumes/ ]
+ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 
+#### test environment - cluster-k8s-minikube
+ref: https://minikube.sigs.k8s.io/docs/commands/start/
 
+[kubectl commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+[kubectl cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+[k8s guess book example - go](https://github.com/kubernetes/examples/tree/master/guestbook-go)
 
-[kubectl commands]  ref: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
-[kubectl cheatsheet] ref: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-[k8s guess book example - go] ref: https://github.com/kubernetes/examples/tree/master/guestbook-go
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#container-images
 ref: https://kubernetes.io/docs/concepts/configuration/overview/#general-configuration-tips
-[test environment - cluster-k8s-minikube]-https://minikube.sigs.k8s.io/docs/commands/start/
-
