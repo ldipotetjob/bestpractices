@@ -1,3 +1,42 @@
+# Best Practices - k8s #
+
+## Basic ##
+
+* Don't use nacked pods 
+* Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it.
+* An optional (though strongly recommended) cluster add-on is a DNS server
+* Don't specify a hostPort for a Pod unless it is absolutely necessary
+* Avoid using hostNetwork
+* Use headless Services (which have a ClusterIP of None) for easy service discovery when you don't need kube-proxy load balancing.
+* Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }
+* Have a look at the imagePullPolicy that fit better to your installation.[ https://kubernetes.io/docs/concepts/containers/images/ ]
+* Create namespace. Decide when create + namespaces[https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/#when-to-use-multiple-namespaces]
+* Use label and selector whenever be possible. [ https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/ ] 
+* Prepare you updating image policy. ref: https://kubernetes.io/docs/concepts/containers/images/#updating-images 
+
+
+
+This project is related with best practices that can be applied in the process of software creation.
+
+## Best practices that can be found here ##
+
+* Coding scala.
+* working with Git
+* Working with Docker[ Docker Container/Docker Files ] 
+* K8s 
+* Cassandra DB
+* Dealing with config files 
+
+
+
+
+
+
+
+
+
+
+
 
 Don't use nacked pods 
 Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it.
