@@ -24,6 +24,8 @@ some companies still write apps that log to files. Redirecting logs to stdout an
 
 ## Security ## 
 
+* Upgrade to the latest version
+* Enable RBAC
 * Implement Continuous Security Vulnerability Scanning
 * Regularly Apply Security Updates to Your Environment
 * Ensure That Only Authorized Images are Used in Your Environment
@@ -32,6 +34,8 @@ some companies still write apps that log to files. Redirecting logs to stdout an
 * Define Resource Quota
 * Apply Security Context to Your Pods and Containers
 * Implement Network Segmentation
+
+ref: https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/#2-enable-rbac-with-least-privilege-disable-abac-and-monitor-logs
 
 ## Operators 
 
