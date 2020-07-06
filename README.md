@@ -1,8 +1,11 @@
-# bestpractices
-best practices when coding
-In this repository we are going to deal with different kind of best practices. 
-Best practices coding scala
-Best practices commenting on Git 
-Best practices creating docker files
-Best practices dealing with config files 
-etc...
+# Best Practices #
+
+This project is related with best practices that can be applied in the process of software creation.
+
+## Best practices that can be found here ##
+
+* Coding scala.
+* working with Git
+* Working with Docker[ Docker Container/Docker Files ] 
+* K8s 
+* Dealing with config files 
