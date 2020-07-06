@@ -8,4 +8,5 @@ This project is related with best practices that can be applied in the process o
 * working with Git
 * Working with Docker[ Docker Container/Docker Files ] 
 * K8s 
+* Cassandra DB
 * Dealing with config files 
