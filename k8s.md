@@ -14,13 +14,12 @@
 * Use label and selector whenever be possible. ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
 * Prepare you updating image policy. ref: https://kubernetes.io/docs/concepts/containers/images/#updating-images 
 
-## Loggin 
+## Logging 
 
-* Set Up loggin System 
+* Set Up logging System 
 * Establish a Retention Mechanism => explanation ... adptar a nuestros logs: Whether you choose to perform logging internally or use a third-party service, logs still eat up a lot of space. Therefore, make sure you have a clear retention policy that stores logs for future use.
 * Write Logs to Stdout and Stderr => explanation ... Although it’s standard practice when moving to a containerized environment, 
 some companies still write apps that log to files. Redirecting logs to stdout and stderr allows Kubernetes’ centralized logging framework to come into play and automatically stream the logs to any desired location. ref: https://kubernetes.io/docs/concepts/cluster-administration/logging/
-
 
 ## Security ## 
 
