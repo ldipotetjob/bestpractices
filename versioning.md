@@ -1,5 +1,5 @@
-This is not specifically a best practices file It is just about versioning it's just more a pattern 
-about how to versioning softwares/docker images/releases:
+Versioning pattern</br> 
+How to versioning softwares/docker images/releases:
 
 #### Some patterns
 
@@ -14,5 +14,8 @@ about how to versioning softwares/docker images/releases:
 | Release candidate | 1.2.0-rc.3    | 1.2.2.3      |
 | Release           | 1.2.0         | 1.2.3.0      |
 
+</br>
+</br>
+</br>
 
 **Versioning patterns**: https://semver.org/
