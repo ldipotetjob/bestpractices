@@ -59,7 +59,7 @@ ref: https://cassandra.apache.org/doc/latest/getting_started/production.html#ens
 
 #### Memomry Config
 
-**Heap size is usually between ¼ and ½ of system memory but not larger than 32 GB.**
+**Heap size is usually between ¼ and ½ of system memory but not larger than 32 GB.**</br>
 HEAP_NEWSIZE=20%MAX_HEAP_SIZE
 
 ref: [Memory configuration in cassandra](https://github.com/apache/cassandra/blob/trunk/conf/cassandra-env.sh) 
