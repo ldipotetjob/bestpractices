@@ -73,4 +73,5 @@ https://medium.com/flant-com/running-cassandra-in-kubernetes-challenges-and-solu
 ref.: 
 1. How To Set Up A Cluster With Even Token Distribution:</br>https://thelastpickle.com/blog/2019/02/21/set-up-a-cluster-with-even-token-distribution.html
 2. How cassandra distributes token:</br>https://www.bmc.com/blogs/cassandra-tokens/
+3. Resources on k8s:</br>https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/
 
