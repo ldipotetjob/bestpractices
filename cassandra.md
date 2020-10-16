@@ -56,14 +56,15 @@ ref. [about cassandra configuration](https://github.com/apache/cassandra/tree/tr
 
 ref. [Check algorithm how to assign tokens to nodes](https://www.datastax.com/blog/new-token-allocation-algorithm-cassandra-30)
 
+
+
 From medium:</br>
 https://medium.com/flant-com/running-cassandra-in-kubernetes-challenges-and-solutions-9082045a7d93
 
 
 
 ref.: 
-[ https://thelastpickle.com/blog/2019/02/21/set-up-a-cluster-with-even-token-distribution.html ]
-[ https://www.bmc.com/blogs/cassandra-tokens/ ]
-[ https://danielparker.me/cassandra/vnodes/til/vnodes-in-cassandra/ ]
+1. How To Set Up A Cluster With Even Token Distribution: https://thelastpickle.com/blog/2019/02/21/set-up-a-cluster-with-even-token-distribution.html
+2. How cassandra distributes token: https://www.bmc.com/blogs/cassandra-tokens/
 
 
