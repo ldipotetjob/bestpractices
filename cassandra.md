@@ -25,9 +25,9 @@ Consistency Levels(number of replicas that must answer[Read/Writes]):
 ONE: Only a single replica must respond.</br>
 TWO: Two replicas must respond.</br>
 THREE: Three replicas must respond.</br> 
-QUORUM: A majority (n/2 + 1) of the replicas must respond. Must be rounded down.</br></br> 
-
-QUORUM: In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.</br></br>  
+QUORUM:</br> 
+ A majority (n/2 + 1) of the replicas must respond. Must be rounded down. n:node
+ In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.  
 
 #### Replication Factor
 
@@ -39,6 +39,14 @@ QUORUM: In an scenario with 3 nodes only 2 noders must respond so in the worst c
 ref. : https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
 
 **Ensure Keyspaces are Created with NetworkTopologyStrategy** </br>
+
+
+#### Reminder for full backup 
+
+* flush in-memory data (Memtables) to the disk (SSTables)
+
+
+
 ref: https://cassandra.apache.org/doc/latest/getting_started/production.html#ensure-keyspaces-are-created-with-networktopologystrategy
 
 ref. [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big-data/best-practices-for-running-apache-cassandra-on-amazon-ec2/)</br>
@@ -48,32 +56,14 @@ ref. [about cassandra configuration](https://github.com/apache/cassandra/tree/tr
 
 ref. [Check algorithm how to assign tokens to nodes](https://www.datastax.com/blog/new-token-allocation-algorithm-cassandra-30)
 
+From medium:</br>
+https://medium.com/flant-com/running-cassandra-in-kubernetes-challenges-and-solutions-9082045a7d93
 
-
-
-
-== AWS ===
-EBS drive 
-Ephimeral SSD 
-Have Strong backup and restore measures in place
-- Test backup & Test Restores
-Know how long it takes to boostrap/rebuild nodes and rebuild DCs
-Test failure scenarios 
-
-===
-
-Backups 
-ref: https://medium.com/flant-com/running-cassandra-in-kubernetes-challenges-and-solutions-9082045a7d93
-...
-
-Let me remind you that Cassandra stores parts of the data in memory. To do a full backup, you have to 
-flush in-memory data (Memtables) to the disk (SSTables). In Cassandra’s terminology, that process is
-called a “nodetool drain”: it makes a Cassandra node stop receiving connections and become
-unreachable — an unwanted behaviour in most cases.
-...
 
 
 ref.: 
 [ https://thelastpickle.com/blog/2019/02/21/set-up-a-cluster-with-even-token-distribution.html ]
 [ https://www.bmc.com/blogs/cassandra-tokens/ ]
 [ https://danielparker.me/cassandra/vnodes/til/vnodes-in-cassandra/ ]
+
+
