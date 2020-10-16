@@ -4,6 +4,8 @@
 * Amazon Keyspaces [released on 2020]
 * Cassandra on k8s Cluster [EKS]/EC2 Images 
  
+## Cassandra on k8s Cluster [EKS]/EC2 Images
+
 After having a looks we think that perhaps in the future Amazon Key Spaces could be a feasible choice but not in this momment 
 because its complexity.
 
@@ -20,42 +22,47 @@ Ec2 amis/Region Ireland:
 | m5.large      | 2             | 10    | 8             | EBS Only              | $0.107 per Hour  |
 | m5.xlarge     | 4             | 16    | 16            | EBS Only              | $0.214 per Hour  |
 
-Consistency Levels(number of replicas that must answer[Read/Writes]):
+ref. [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big-data/best-practices-for-running-apache-cassandra-on-amazon-ec2/) 
 
-ONE: Only a single replica must respond.</br>
-TWO: Two replicas must respond.</br>
-THREE: Three replicas must respond.</br> 
-QUORUM:</br> 
- A majority (n/2 + 1) of the replicas must respond. Must be rounded down. n:node
- In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.  
-
-#### Replication Factor
-
-* Avoid keyspace with different replication factor. [It cans potentially cause hot spots.]
-
-#### Tokens
-
-* Review token value. Default value = 256. Check algorithm how to assign tokens to nodes
-ref. : https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
-
-**Ensure Keyspaces are Created with NetworkTopologyStrategy** </br>
-
-
-#### Reminder for full backup 
+#### Backup 
 
 * flush in-memory data (Memtables) to the disk (SSTables)
 
 
-
-ref: https://cassandra.apache.org/doc/latest/getting_started/production.html#ensure-keyspaces-are-created-with-networktopologystrategy
-
-ref. [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big-data/best-practices-for-running-apache-cassandra-on-amazon-ec2/)</br>
-     [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/latest/architecture/dynamo.html#tunable-consistency)</br>
+## Cassandra configuration 
 
 ref. [about cassandra configuration](https://github.com/apache/cassandra/tree/trunk/conf)
 
-ref. [Check algorithm how to assign tokens to nodes](https://www.datastax.com/blog/new-token-allocation-algorithm-cassandra-30)
 
+#### Consistency Levels
+
+Consistency Levels(number of replicas that must answer[Read/Writes]):
+
+* ONE: Only a single replica must respond.
+* TWO: Two replicas must respond.
+* THREE: Three replicas must respond.
+* QUORUM: A majority (n/2 + 1) of the replicas must respond.Must be rounded down. n:node. 
+
+ref: [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/latest/architecture/dynamo.html#tunable-consistency)</br>
+
+**In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.**  
+**Avoid keyspace with different replication factor. [It cans potentially cause hot spots.]**
+
+#### Tokens
+
+**Review token value. Default value=256/Recommended value=16 . Check algorithm how to assign tokens to nodes**</br>
+ref. : https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
+
+#### Topology
+**Ensure Keyspaces are Created with NetworkTopologyStrategy** </br>
+ref: https://cassandra.apache.org/doc/latest/getting_started/production.html#ensure-keyspaces-are-created-with-networktopologystrategy
+
+#### Memomry Config
+
+**Heap size is usually between ¼ and ½ of system memory but not larger than 32 GB.**
+HEAP_NEWSIZE=20%MAX_HEAP_SIZE
+
+ref: [Memory configuration in cassandra](https://github.com/apache/cassandra/blob/trunk/conf/cassandra-env.sh) 
 
 
 From medium:</br>
@@ -66,5 +73,4 @@ https://medium.com/flant-com/running-cassandra-in-kubernetes-challenges-and-solu
 ref.: 
 1. How To Set Up A Cluster With Even Token Distribution: https://thelastpickle.com/blog/2019/02/21/set-up-a-cluster-with-even-token-distribution.html
 2. How cassandra distributes token: https://www.bmc.com/blogs/cassandra-tokens/
-
 
