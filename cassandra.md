@@ -22,7 +22,7 @@ Ec2 amis/Region Ireland:
 | m5.large      | 2             | 10    | 8             | EBS Only              | $0.107 per Hour  |
 | m5.xlarge     | 4             | 16    | 16            | EBS Only              | $0.214 per Hour  |
 
-ref. [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big-data/best-practices-for-running-apache-cassandra-on-amazon-ec2/) 
+ref.: [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big-data/best-practices-for-running-apache-cassandra-on-amazon-ec2/) 
 
 #### Backup 
 
@@ -31,7 +31,7 @@ ref. [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/big
 
 ## Cassandra configuration 
 
-ref. [about cassandra configuration](https://github.com/apache/cassandra/tree/trunk/conf)
+ref.: [about cassandra configuration](https://github.com/apache/cassandra/tree/trunk/conf)
 
 
 #### Consistency Levels
@@ -43,7 +43,7 @@ Consistency Levels(number of replicas that must answer[Read/Writes]):
 * THREE: Three replicas must respond.
 * QUORUM: A majority (n/2 + 1) of the replicas must respond.Must be rounded down. n:node. 
 
-ref: [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/latest/architecture/dynamo.html#tunable-consistency)</br>
+ref.: [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/latest/architecture/dynamo.html#tunable-consistency)</br>
 
 **In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.**  
 **Avoid keyspace with different replication factor. [It cans potentially cause hot spots.]**
@@ -51,7 +51,7 @@ ref: [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/
 #### Tokens
 
 **Review token value. Default value=256/Recommended value=16 . Check algorithm how to assign tokens to nodes**</br>
-ref. : https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
+ref.: https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
 
 #### Topology
 **Ensure Keyspaces are Created with NetworkTopologyStrategy** </br>
@@ -62,7 +62,7 @@ ref: https://cassandra.apache.org/doc/latest/getting_started/production.html#ens
 **Heap size is usually between ¼ and ½ of system memory but not larger than 32 GB.**</br>
 HEAP_NEWSIZE=20%MAX_HEAP_SIZE
 
-ref: [Memory configuration in cassandra](https://github.com/apache/cassandra/blob/trunk/conf/cassandra-env.sh) 
+ref.: [Memory configuration in cassandra](https://github.com/apache/cassandra/blob/trunk/conf/cassandra-env.sh) 
 
 
 From medium:</br>
