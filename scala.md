@@ -29,3 +29,13 @@ run -Dconfig.resource=development.conf
 ```
 ref.: [Configuring Native Memory Tracking](https://www.baeldung.com/native-memory-tracking-in-jvm#nmt)</br>
 ref.: [Configuring JVM](https://docs.oracle.com/cd/E15523_01/web.1111/e13814/jvm_tuning.htm#PERFM161) 
+
+### LightBend Products 
+
+#### PlayFramework 
+
+* Java Option on Play Framework memory default values **-Xms128M** and **-Xmx512m** </br>
+  ref: [Play Framework Default Memory Configuration](https://github.com/playframework/playframework/blob/master/documentation/manual/working/commonGuide/production/ProductionConfiguration.md#jvm-configuration)
+* If your are creating your disribution via Sbt Native Packager you can implement your own Conf following the [Sbt Native Packager Java Option Configuration](https://www.scala-sbt.org/sbt-native-packager/archetypes/java_app/customize.html#via-build-sbt)
+</br></br>
+There is a trade-off between our memory consumption, the reserved memory an what we really need in our peak of the memory consumption.
