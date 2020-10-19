@@ -19,3 +19,13 @@ case class ClassName (classField: fieldType1 = Default_Value, classField: fieldT
     finally { resource.close() }
   }
 ```
+
+### Tracking memory consumption 
+
+```shell
+java -XX:NativeMemoryTracking=summary -Xms128M -Xmx512m -XX:+UseG1GC -jar /Users/ldipotet/libsscala/sbt/bin/sbt-launch.jar
+
+run -Dconfig.resource=development.conf
+```
+ref.: [Configuring Native Memory Tracking](https://www.baeldung.com/native-memory-tracking-in-jvm#nmt)</br>
+ref.: [Configuring JVM](https://docs.oracle.com/cd/E15523_01/web.1111/e13814/jvm_tuning.htm#PERFM161) 
