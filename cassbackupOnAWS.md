@@ -18,6 +18,22 @@ must follow these steps: </br>
 
 
 
+Before Shutdown your Cluster follow the following instrunction:
+- Pay attention don't delete the data volumenes that contain our our data 
+
+.....
+        volumeMounts:
+        - name: cassandra-data
+          mountPath: /var/lib/cassandra
+.....
+
+We need to attach the volume 
+To list partition tables and partitions on a device
+fdisk -l 
+
+
+
+
 ref.: Providers & Storage Class Resources:</br>
       https://kubernetes.io/docs/concepts/storage/storage-classes/#the-storageclass-resource
       
