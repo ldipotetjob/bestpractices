@@ -50,11 +50,17 @@ Before Shutdown your Cluster follow the following instrunction:
 
 Remember that you can get easily from your AWS EC2 console the ssh command to connect to your ec2 instances
 
-For copy directories 
+sudo scp -r -i /path/<keypair_name.pem> ec2-user@ip_url_aws_ec2_image:/mounted_dir target_dir
+
+k8s For copy directories 
 
 ......
 
 
+
+kubectl cp ./cass-1-football-eu-west-1b/ cassandra-0:/tmp/
+
+**do not copy on claimed volume** 
 ......
 
 
