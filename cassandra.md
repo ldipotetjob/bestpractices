@@ -9,7 +9,7 @@
 After having a looks we think that perhaps in the future Amazon Key Spaces could be a feasible choice but not in this momment 
 because its complexity.
 
-**The 2 first rows in the table below are the EC2 amis recommended as best practice.**Those instances offer 10–Gb/s performance.**
+**The 2 first rows in the table below are the EC2 amis recommended as best practice.** Those instances offer 10–Gb/s performance.
 
 **The 2 last row in the table below have been tested in a moderated production environment and looks quite well.**
 
@@ -45,12 +45,12 @@ Consistency Levels(number of replicas that must answer[Read/Writes]):
 
 ref.: [about tunnable consistency in cassandra](https://cassandra.apache.org/doc/latest/architecture/dynamo.html#tunable-consistency)</br>
 
-**In an scenario with 3 nodes only 2 noders must respond so in the worst case one node canbe down and the System must work without any problem.**  
+**In an scenario with 3 nodes only 2 nodes must respond so in the worst case one node can be down and the System must work without any problem.**  
 **Avoid keyspace with different replication factor. [It cans potentially cause hot spots.]**
 
 #### Tokens
 
-**Review token value. Default value=256/Recommended value=16 . Check algorithm how to assign tokens to nodes**</br>
+**Review token value. Default value=256/Recommended value=16 . Check algorithm how to assign tokens to nodes** </br>
 ref.: https://cassandra.apache.org/doc/latest/getting_started/production.html#tokens </br>
 
 #### Topology
