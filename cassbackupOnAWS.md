@@ -36,6 +36,10 @@ Before Shutdown your Cluster follow the following instrunction:
 
 ### For recovery your data 
 
+1. nodetool import ?? sstables loader 
+2. nodetool repair
+3. nodetool refresh 
+
 ## On AWS console 
 
 ### on ec2 dashboard
