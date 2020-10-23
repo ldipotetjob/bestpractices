@@ -38,12 +38,10 @@ Before Shutdown your Cluster follow the following instrunction:
 
 1. nodetool import ?? sstables loader 
 2. nodetool repair
-3. \<regenerate materialized views\> **not recommended  in production** 
+3. \<regenerate materialized views\> **not recommended  in production**: </br>
+   the .sql statement generated in the backup on snapshop process creates tables NOT views
 4. nodetool refresh 
-
-note: 
-**In 3. the .sql statement generated in the backup on snapshop process create tables NOT views** 
-
+ 
 ## On AWS console 
 
 ### on ec2 dashboard
