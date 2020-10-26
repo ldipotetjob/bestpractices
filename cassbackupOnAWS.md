@@ -31,16 +31,6 @@ volumeMounts:
         - name: cassandra-data
           mountPath: /var/lib/cassandra
 
-### For recovery your data 
-
-1. [nodetool repair](https://cassandra.apache.org/doc/latest/tools/nodetool/repair.html) 
-2. \<regenerate materialized views\> **not recommended  in production**: </br>
-   the .sql statement generated in the backup on snapshop process creates tables NOT views
-3. nodetool refresh (but in our case we take very carefully migrations).
-   * we recommend an script that traverse all tables in your keyspace.
-
-note: in Cassandra ver 4+ nodetool refresh is deprecated and **nodetool import** is recomended.
-
 ## On AWS console 
 
 ### on ec2 dashboard get the info stored on ebs volume or ebs snapshot 
@@ -57,13 +47,18 @@ note: in Cassandra ver 4+ nodetool refresh is deprecated and **nodetool import**
 **Remember that you can get easily from your AWS EC2 console the ssh command to connect to your ec2 instances**
 
 
-
-1. move data to your image: kubectl cp ./target_dir/ cassandra_pod:/tmp/
-2. 
-
-......
+1. move data to your cassandra image: kubectl cp ./target_dir/ cassandra_pod:/var/lib/data/<specific keyspaces>/specific tables
 
 
+### For recovery your data 
+
+1. [nodetool repair](https://cassandra.apache.org/doc/latest/tools/nodetool/repair.html) 
+2. \<regenerate materialized views\> **not recommended  in production**: </br>
+   the .sql statement generated in the backup on snapshop process creates tables NOT views
+3. nodetool refresh (but in our case we take very carefully migrations).
+   * we recommend an script that traverse all tables in your keyspace.
+
+note: in Cassandra ver 4+ nodetool refresh is deprecated and **nodetool import** is recomended.
 
 
 
