@@ -52,7 +52,8 @@ volumeMounts:
 
 ### For recovery your data 
 
-1. [nodetool repair](https://cassandra.apache.org/doc/latest/tools/nodetool/repair.html) 
+1. [nodetool repair](https://cassandra.apache.org/doc/latest/tools/nodetool/repair.html) </br>
+   from k8s: kubectl exec cassandra_node -ti -- nodetool repair -full
 2. \<regenerate materialized views\> **not recommended  in production**: </br>
    the .sql statement generated in the backup on snapshop process creates tables NOT views
 3. nodetool refresh (but in our case we take very carefully migrations).
