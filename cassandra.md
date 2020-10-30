@@ -27,6 +27,9 @@ ref.: [about cassandra best practices on aws](https://aws.amazon.com/es/blogs/bi
 #### Backup 
 
 * flush in-memory data (Memtables) to the disk (SSTables)
+* configure snapshot or incremental backup
+
+ref.: [executing backup and recovery](https://github.com/ldipotetjob/bestpractices/blob/master/cassbackupOnAWS.md) 
 
 
 ## Cassandra configuration 
