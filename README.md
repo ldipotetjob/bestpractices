@@ -10,3 +10,4 @@ This project is related with best practices that can be applied in the process o
 * [K8s](https://github.com/ldipotetjob/bestpractices/blob/master/k8s.md) 
 * [Cassandra DB](https://github.com/ldipotetjob/bestpractices/blob/master/cassandra.md)
 * Dealing with config files 
+* Media Types 
