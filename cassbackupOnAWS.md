@@ -47,7 +47,7 @@ volumeMounts:
 **Remember that you can get easily from your AWS EC2 console the ssh command to connect to your ec2 instances**
 
 
-1. move data to your cassandra image: kubectl cp ./target_dir/ cassandra_pod:/var/lib/data/<specific keyspaces>/specific tables
+1. move data to your cassandra image: kubectl cp ./target_dir/ cassandra_pod:/var/lib/data/<specific_keyspace>/specific tables
 
 
 ### For recovery your data 
