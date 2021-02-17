@@ -21,8 +21,8 @@ must follow these steps: </br>
 2. nodetool cleanup -- <keyspace_name>
 3. nodetool flush -- <keyspace_name> 
 4. Type of backup</br>
-   4.1 nodetool snapshot --tag <mnemonic_name> <keyspace_name>
-   4.2 incremental backup(must be configured on cassandra.yaml) 
+    4.1 nodetool snapshot --tag <mnemonic_name> <keyspace_name> </br>
+    4.2 incremental backup(must be configured on cassandra.yaml) </br> 
 
 Before Shutdown your Cluster follow the following instrunction:
 - Pay attention don't delete the data volumenes that contain our our data 
