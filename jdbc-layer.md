@@ -13,6 +13,14 @@ CREATE DATABASE football OWNER postgres;
 CREATE TABLE footballgame (leagueid text, season text NOT NULL, audience int, playermin text[][]);
 ``` 
 
+
+* necessary imports
+ 
+  [Review seting Up](https://tpolecat.github.io/doobie/docs/11-Arrays.html#setting-up)
+  
+  
+
+
 * src code 
 
 ```scala
@@ -25,3 +33,14 @@ case class FootballMatch(league: String, season: String, audience: Int, team: Ar
 
 sql"select leagueid,season,audience,playermin from footballgame".query[FootballMatch].to[List].transact(xa)
 ```
+
+
+
+ref:
+
+https://tpolecat.github.io/doobie-0.2.1/13-Extensions-PostgreSQL.html
+
+https://tpolecat.github.io/doobie/docs/11-Arrays.html
+
+
+
